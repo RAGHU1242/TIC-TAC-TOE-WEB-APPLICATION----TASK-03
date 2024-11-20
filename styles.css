@@ -1,0 +1,119 @@
+/* General Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: orange;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Title Styling */
+h1 {
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px #555;
+}
+
+/* Game Container */
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Game Board Grid */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* Cell Styling */
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: lightblue;
+    border: 1px solid #0056b3;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    color: #333;
+}
+
+/* Controls Section */
+#controls {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 500px;
+    left: -500px; /* Position the controls towards the right side */
+    top: 50%; /* Vertically center the controls */
+    transform: translateY(-50%);
+    gap: 15px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons Styling */
+#controls button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Winning Message */
+#status-message {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Winning Message Cloud */
+#status-message {
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    animation: swingIn 2s ease forwards; /* Animation triggers dynamically */
+}
+
+/* Swing In Animation */
+@keyframes swingIn {
+    0% {
+        transform: translateY(-200px) rotate(-45deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20px) rotate(10deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+}
